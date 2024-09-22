@@ -3,25 +3,23 @@ Automatizando Zabbix com Docker em Container
 Este script faz a instalação do Docker, cria a pasta onde ficará o arquivo de configuração do Docker Compose, e em seguida gera esse arquivo. Alguns campos no Docker Compose precisam ser ajustados conforme o seu ambiente:
 
 DB_SERVER_HOST: Coloque o IP ou DNS do seu servidor Zabbix.
+
 ZBX_PASSIVESERVERS: Coloque o IP ou DNS do seu servidor Zabbix.
+
 Salve o script com o nome que preferir, mas recomendo algo como zabbix.sh (não esqueça do ".sh"). Também será necessário dar permissão para ele funcionar.
 
 Passos para criar o script:
 
 Para criar o arquivo:
 
-bash
-Copy code
-nano zabbix.sh
+vim zabbix.sh
 Para dar permissão ao script:
 
-bash
-Copy code
+
 chmod +x zabbix.sh
+
 Conteúdo do script:
 
-bash
-Copy code
 #!/bin/bash
 
 # Instala Docker e atualiza o sistema
@@ -118,19 +116,3 @@ networks:
 volumes:
   zbx_db15:
 EOF
-
-# Muda para a pasta do Zabbix
-cd /home/zabbix/
-
-# Sobe os containers
-sudo docker compose up -d
-
-# Verifica se os containers estão rodando
-sudo docker ps
-
-# Para ver os logs dos containers:
-# sudo docker logs <nome_do_container>
-
-# Se precisar ver o IP do zabbix-agent2:
-# docker inspect zabbix-agent2 | grep "IPAddress\": "
-
