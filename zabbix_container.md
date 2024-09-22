@@ -8,13 +8,11 @@ ZBX_PASSIVESERVERS: Coloque o IP ou DNS do seu servidor Zabbix.
 
 Salve o script com o nome que preferir, mas recomendo algo como zabbix.sh (não esqueça do ".sh"). Também será necessário dar permissão para ele funcionar.
 
-Passos para criar o script:
-
-Para criar o arquivo:
+Para criar o scrit:
 
 vim zabbix.sh
-Para dar permissão ao script:
 
+Para dar permissão ao script:
 
 chmod +x zabbix.sh
 
