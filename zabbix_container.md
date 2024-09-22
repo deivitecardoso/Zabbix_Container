@@ -18,7 +18,7 @@ Para dar permissão ao script:
 
 chmod +x zabbix.sh
 
-Conteúdo do script:
+# Conteúdo do script:
 
 #!/bin/bash
 
